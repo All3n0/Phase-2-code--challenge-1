@@ -2,26 +2,28 @@ import React,{useState} from 'react';
 import './App.css';
 import Header from './Header.js';
 import ItemForm from './Itemform.js';
+import transactionsData from './Transactions.js';
+import Table from './Table.js';
 
-let transactions=[
-  {Date:"2019-12-02",Description:"Paycheck for Billie Kimbers",Category:"Salaries",Amount:"2500"},
-  {Date:"2019-12-03",Description:"Fuel Vehicles",Category:"Expenses",Amount:"7000"},
-  {Date:"2019-12-08",Description:"Removal of wear paints",Category:"Expenses",Amount:"600"},
-  {Date:"2019-12-02",Description:"Art Purchase",Category:"Luxury",Amount:"4700"},
-  {Date:"2019-12-02",Description:"Paycheck for Jason Bishop",Category:"Salaries",Amount:"2500"},
-  {Date:"2019-12-02",Description:"Paycheck for Billie Kimbers",Category:"Salaries",Amount:"2500"}
-]
+
 
 function App() {
-  const [Transactions,setTransactions]=useState(transactions);
-  function onItemFormSubmit(newTransact){
-    setTransactions([...Transactions,newTransact])
-    console.log(newTransact)
+  const [transactions,setTransactions]=useState(transactionsData)
+  function handleSubmit(newTrancaction){
+    
+    setTransactions([...transactions,newTrancaction])
   }
+  
   return (
     <div className="App">
       <Header className="App-header"  />
-      <ItemForm onItemFormSubmit={onItemFormSubmit}/>
+      <div id='form1'>
+      <ItemForm onItemFormSubmit={handleSubmit}/>
+      </div>
+      <div id='table1'>
+      <Table transactions={transactions}/>
+      </div>
+     
     </div>
   );
 }

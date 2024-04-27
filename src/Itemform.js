@@ -8,7 +8,11 @@ function ItemForm({onItemFormSubmit}){
 
     function handleSubmit(event){
         event.preventDefault();
-        onItemFormSubmit({date,Description,Category,amount})
+        const newTrancaction={Date:date,Description:Description,Category:Category,Amount:amount}
+        onItemFormSubmit(newTrancaction);
+        setDate('');
+        setDescription('');
+        setAmount('0');
     }
     function handleDateChange(event){
         setDate(event.target.value);
@@ -23,7 +27,8 @@ function ItemForm({onItemFormSubmit}){
         setAmount(event.target.value)
     }
     return(
-        <form onSubmit={handleSubmit}>
+        <div>
+            <form onSubmit={handleSubmit}>
             <label>
                 Date:
                 <input type="text" name="date" value={date} onChange={handleDateChange}></input>
@@ -42,10 +47,11 @@ function ItemForm({onItemFormSubmit}){
             </label>
             <label>
                 Amount:
-                <input type="text" name="amounnt" value={amount} onChange={handleAmountChange}></input>
+                <input type="text" name="amount" value={amount} onChange={handleAmountChange}></input>
             </label>
             <button type="submit">New Transaction</button>
         </form>
+        </div>
     )
 }
 export default ItemForm;
