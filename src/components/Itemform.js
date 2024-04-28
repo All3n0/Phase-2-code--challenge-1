@@ -42,25 +42,25 @@ function ItemForm({onItemFormSubmit}){
             <form id="fiorm"onSubmit={handleSubmit}>
             <label>
                 Date:
-                <input placeholder="YYYY/MM/DD" type="text" name="date" value={date} onChange={handleDateChange}></input>
+                <input className="input" placeholder="YYYY/MM/DD" type="text" name="date" value={date} onChange={handleDateChange}></input>
             </label>
             <label>
                 Description:
-                <input placeholder="Description" type="text" name="description" value={Description} onChange={handleDescriptionChange}></input>
+                <input className="input" placeholder="Description" type="text" name="description" value={Description} onChange={handleDescriptionChange}></input>
             </label>
             <label>
                 Category:
-                <select name="category" value={Category} onChange={handleCategoryChange}>
-                    <option value='Expenses'>Expenses</option>
-                    <option value='Luxury'>Luxury</option>
-                    <option value='Salaries'>Salaries</option>
+                <select className="input" name="category" value={Category} onChange={handleCategoryChange}>
+                    <option  value='Expenses'>Expenses</option>
+                    <option  value='Luxury'>Luxury</option>
+                    <option  value='Salaries'>Salaries</option>
                 </select>
             </label>
             <label>
                 Amount:
-                <input placeholder="Amount" type="text" name="amount" value={amount} onChange={handleAmountChange}></input>
+                <input className="input" placeholder="Amount" type="text" name="amount" value={amount} onChange={handleAmountChange}></input>
             </label>
-            <button type="submit">New Transaction</button>
+            <button id="button"type="submit">New Transaction</button>
         </form>
         </div>
     )
