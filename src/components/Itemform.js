@@ -1,10 +1,11 @@
 import React,{useState} from "react";
+import '../css/Itemform.css'
 
 function ItemForm({onItemFormSubmit}){
     const [date,setDate]=useState("")
     const [Description,setDescription] =useState("");
     const [Category,setCategory] = useState("");
-    const [amount,setAmount] = useState("0");
+    const [amount,setAmount] = useState("");
 
     function handleSubmit(event){
         event.preventDefault();
@@ -12,10 +13,12 @@ function ItemForm({onItemFormSubmit}){
         onItemFormSubmit(newTrancaction);
         setDate('');
         setDescription('');
-        setAmount('0');
+        setAmount('');
     }
     function handleDateChange(event){
-        setDate(event.target.value);
+        const inputDate=event.target.value;
+        setDate(inputDate)
+        
     }
     function handleDescriptionChange(event){
         setDescription(event.target.value)
@@ -24,18 +27,26 @@ function ItemForm({onItemFormSubmit}){
         setCategory(event.target.value)
     }
     function handleAmountChange(event){
-        setAmount(event.target.value)
+        const inputAmount = event.target.value;
+    
+    const parsedAmount = parseFloat(inputAmount);
+    if (!isNaN(parsedAmount) || inputAmount === "") {
+        setAmount(parsedAmount);
+    } else {
+        setAmount(0);
+    }
+
     }
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form id="fiorm"onSubmit={handleSubmit}>
             <label>
                 Date:
-                <input type="text" name="date" value={date} onChange={handleDateChange}></input>
+                <input placeholder="YYYY/MM/DD" type="text" name="date" value={date} onChange={handleDateChange}></input>
             </label>
             <label>
                 Description:
-                <input type="text" name="description" value={Description} onChange={handleDescriptionChange}></input>
+                <input placeholder="Description" type="text" name="description" value={Description} onChange={handleDescriptionChange}></input>
             </label>
             <label>
                 Category:
@@ -47,7 +58,7 @@ function ItemForm({onItemFormSubmit}){
             </label>
             <label>
                 Amount:
-                <input type="text" name="amount" value={amount} onChange={handleAmountChange}></input>
+                <input placeholder="Amount" type="text" name="amount" value={amount} onChange={handleAmountChange}></input>
             </label>
             <button type="submit">New Transaction</button>
         </form>
