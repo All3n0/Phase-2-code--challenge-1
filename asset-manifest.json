@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Phase-2-code--challenge/static/css/main.bbbba483.css",
-    "main.js": "/Phase-2-code--challenge/static/js/main.5ddfa5e4.js",
-    "static/js/453.d3943c81.chunk.js": "/Phase-2-code--challenge/static/js/453.d3943c81.chunk.js",
-    "index.html": "/Phase-2-code--challenge/index.html",
-    "main.bbbba483.css.map": "/Phase-2-code--challenge/static/css/main.bbbba483.css.map",
-    "main.5ddfa5e4.js.map": "/Phase-2-code--challenge/static/js/main.5ddfa5e4.js.map",
-    "453.d3943c81.chunk.js.map": "/Phase-2-code--challenge/static/js/453.d3943c81.chunk.js.map"
+    "main.css": "/github.io/Phase-2-code--challenge-1/static/css/main.bbbba483.css",
+    "main.js": "/github.io/Phase-2-code--challenge-1/static/js/main.abf47e0d.js",
+    "static/js/453.d3943c81.chunk.js": "/github.io/Phase-2-code--challenge-1/static/js/453.d3943c81.chunk.js",
+    "index.html": "/github.io/Phase-2-code--challenge-1/index.html",
+    "main.bbbba483.css.map": "/github.io/Phase-2-code--challenge-1/static/css/main.bbbba483.css.map",
+    "main.abf47e0d.js.map": "/github.io/Phase-2-code--challenge-1/static/js/main.abf47e0d.js.map",
+    "453.d3943c81.chunk.js.map": "/github.io/Phase-2-code--challenge-1/static/js/453.d3943c81.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bbbba483.css",
-    "static/js/main.5ddfa5e4.js"
+    "static/js/main.abf47e0d.js"
   ]
 }
